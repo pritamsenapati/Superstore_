@@ -69,8 +69,6 @@ WHERE s.profit > (
     FROM superstore
     WHERE Category = s.Category
 );
-
-
 ** 4 . Find all products belonging to categories that have return rate above 10%**
 ```sql
 SELECT *
@@ -83,16 +81,13 @@ WHERE category IN (
     HAVING COUNT(returned)/COUNT(*) > 0.10
 );
 
-
-
-
 ** 5. Retrieve all columns for orders from the 'South' region, limited to the first 10 rows. **
 
 SELECT * FROM superstore 
 WHERE Region='South' 
 ORDER BY Order_Date 
 LIMIT 10;
-```
+
 
 ** 6. List the top 5 products by sales amount, including product name and sales.
 
@@ -100,7 +95,6 @@ SELECT Product_Name, Sales
 FROM superstore 
 ORDER BY Sales DESC 
 LIMIT 5;
-
 
 ** 7. Find all orders where profit is negative and quantity is more than 5.
 
@@ -114,7 +108,6 @@ ORDER BY Profit ASC;
 SELECT Customer_Name, Segment, Ship_Mode 
 FROM superstore 
 WHERE Ship_Mode = 'Standard Class';
-```
 
 ** 9. Filter orders from California (State = 'California') between January 1, 2015, and December 31, 2015.
 
