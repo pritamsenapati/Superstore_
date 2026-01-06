@@ -46,7 +46,7 @@ The following SQL queries were developed to answer specific business questions:
 ** 1. Find all orders whose sales are above the average sales.
 SELECT * FROM superstore
 WHERE sales > (SELECT AVG(sales) FROM superstore);
-```
+
 
 ** 2. List customers who have placed more orders than the average number of orders per customer.
 
@@ -61,7 +61,7 @@ HAVING COUNT(*) >
 
 
 ** 3. Get products whose profit is greater than the average profit of their category.**
-```sql
+
 SELECT *
 FROM superstore s
 WHERE s.profit > (
@@ -70,7 +70,7 @@ WHERE s.profit > (
     WHERE Category = s.Category
 );
 ** 4 . Find all products belonging to categories that have return rate above 10%**
-```sql
+
 SELECT *
 FROM superstore
 WHERE category IN (
@@ -168,7 +168,7 @@ HAVING AVG(Discount) > 0.4 AND SUM(Quantity) > 100;
 
 SELECT *, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY Sales DESC) rank_products 
 FROM superstore;
-```
+
 
 ** 16. Find the 5th highest Salary
 
@@ -178,7 +178,7 @@ FROM (
     FROM superstore
 ) t 
 WHERE rank_products = 332;
-```
+
 
 ** 17. Find the top-performing customer (by total profit) in each region using a subquery.
  
